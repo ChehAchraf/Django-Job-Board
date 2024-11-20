@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="bradcam_text">
-                    <h3>4536+ Jobs Available</h3>
+                    <h3>{{jobs.count}}+ Jobs Available</h3>
                 </div>
             </div>
         </div>
@@ -127,10 +127,10 @@
                             <div class="single_jobs white-bg d-flex justify-content-between">
                                 <div class="jobs_left d-flex align-items-center">
                                     <div class="thumb">
-                                        <img src="{{job.image}}" alt="">
+                                        <img src="" alt="">
                                     </div>
                                     <div class="jobs_conetent">
-                                        <a href="job_details.html"><h4>{{job.title}}r</h4></a>
+                                        <a href="{% url 'job:job_details' job.id %}"><h4>{{job.title}}</h4></a>
                                         <div class="links_locat d-flex align-items-center">
                                             <div class="location">
                                                 <p> <i class="fa fa-map-marker"></i> California, USA</p>
@@ -144,10 +144,10 @@
                                 <div class="jobs_right">
                                     <div class="apply_now">
                                         <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
-                                        <a href="job_details.html" class="boxed-btn3">Apply Now</a>
+                                        <a href="{% url 'job:job_details' job.id %}" class="boxed-btn3">Apply Now</a>
                                     </div>
                                     <div class="date">
-                                        <p>Date line: 31 Jan 2020</p>
+                                        <p>Date line: {{job.published_at|date:'d M Y'}}</p>
                                     </div>
                                 </div>
                             </div>
